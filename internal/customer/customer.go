@@ -10,4 +10,10 @@ type Repository interface {
 	DeleteByID(customerID int) error
 }
 
-type Usecase interface{}
+type Usecase interface {
+	GetCustomers() ([]models.Customer, error)
+	GetCustomerByID(customerID int) (models.Customer, error)
+	CreateCustomer(customer models.Customer) (models.Customer, error)
+	UpdateCustomer(customerID int, customer models.Customer) (models.Customer, error)
+	DeleteCustomer(customerID int) error
+}
