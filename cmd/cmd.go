@@ -5,6 +5,7 @@ import (
 
 	"github.com/joho/godotenv"
 
+	"github.com/mrizalr/dimy-tech-test/internal/models"
 	"github.com/mrizalr/dimy-tech-test/internal/server"
 	"github.com/mrizalr/dimy-tech-test/pkg/db/mysql"
 )
@@ -21,7 +22,12 @@ func StartApplication() {
 	if err != nil {
 		log.Fatalf("Error when connecting to database | err = %v", err)
 	}
-	err = db.AutoMigrate()
+	err = db.AutoMigrate(
+		&models.Customer{},
+		&models.CustomerAddress{},
+		&models.PaymentMethod{},
+		&models.Product{},
+	)
 	if err != nil {
 		log.Fatalf("Error wheh auto migrating database | err = %v", err)
 	}
