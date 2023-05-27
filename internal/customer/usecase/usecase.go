@@ -28,9 +28,21 @@ func (u *usecase) CreateCustomer(customer models.Customer) (models.Customer, err
 }
 
 func (u *usecase) UpdateCustomer(customerID int, customer models.Customer) (models.Customer, error) {
+	// Check if customer exist
+	_, err := u.repository.FindByID(customerID)
+	if err != nil {
+		return models.Customer{}, err
+	}
+
 	return u.repository.UpdateByID(customerID, customer)
 }
 
 func (u *usecase) DeleteCustomer(customerID int) error {
+	// Check if customer exist
+	_, err := u.repository.FindByID(customerID)
+	if err != nil {
+		return err
+	}
+
 	return u.repository.DeleteByID(customerID)
 }
