@@ -28,6 +28,13 @@ func (u *usecase) CreateAddress(address models.CustomerAddress) (models.Customer
 }
 
 func (u *usecase) UpdateAddress(addressID int, address models.CustomerAddress) (models.CustomerAddress, error) {
+	foundAddress, err := u.repository.FindByID(addressID)
+	if err != nil {
+		return models.CustomerAddress{}, err
+	}
+
+	address.ID = foundAddress.ID
+	address.CustomerID = foundAddress.CustomerID
 	return u.repository.UpdateByID(addressID, address)
 }
 

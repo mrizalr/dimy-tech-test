@@ -24,7 +24,7 @@ func (r *repository) Find(customerID int) ([]models.CustomerAddress, error) {
 
 func (r *repository) FindByID(addressID int) (models.CustomerAddress, error) {
 	address := models.CustomerAddress{}
-	tx := r.db.Where("id = ?", addressID).First(&address)
+	tx := r.db.Preload("Customer").Where("id = ?", addressID).First(&address)
 	return address, tx.Error
 }
 
