@@ -1,7 +1,7 @@
 # dimy-tech-test
 How to run this project
 
-Open project `cd dimy-tech-test`
+Open project `cd dimy-tech-test`\n
 Change .env files with yours configuration
 Run program `go run main.go`
 
