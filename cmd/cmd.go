@@ -27,6 +27,8 @@ func StartApplication() {
 		&models.CustomerAddress{},
 		&models.PaymentMethod{},
 		&models.Product{},
+		&models.Order{},
+		&models.OrderDetail{},
 	)
 	if err != nil {
 		log.Fatalf("Error wheh auto migrating database | err = %v", err)
