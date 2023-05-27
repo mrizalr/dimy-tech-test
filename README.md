@@ -2,7 +2,7 @@
 How to run this project<br/>
 
 Open project `cd dimy-tech-test` <br/><br/>
-Change .env files with yours configuration <br/><br/>
+Change .env files with your configuration <br/><br/>
 Run program `go run main.go` <br/><br/><br/>
 
 BASE URL `host.com:3001/api/v1`<br/><br/>
