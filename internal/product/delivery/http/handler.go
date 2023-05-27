@@ -107,7 +107,7 @@ func (h *handler) DeleteProduct() gin.HandlerFunc {
 			return
 		}
 		models.OkResponse(ctx, gin.H{
-			"message": fmt.Sprintf("customer with id %v successfully deleted", productID),
+			"message": fmt.Sprintf("product with id %v successfully deleted", productID),
 		})
 
 	}

@@ -28,9 +28,22 @@ func (u *usecase) CreateProduct(product models.Product) (models.Product, error) 
 }
 
 func (u *usecase) UpdateProduct(productID int, product models.Product) (models.Product, error) {
+	// Check if product exist
+	foundProduct, err := u.repository.FindByID(productID)
+	if err != nil {
+		return models.Product{}, err
+	}
+
+	product.ID = foundProduct.ID
 	return u.repository.UpdateByID(productID, product)
 }
 
 func (u *usecase) DeleteProduct(productID int) error {
+	// Check if product exist
+	_, err := u.repository.FindByID(productID)
+	if err != nil {
+		return err
+	}
+
 	return u.repository.DeleteByID(productID)
 }
