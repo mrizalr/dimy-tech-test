@@ -1,43 +1,43 @@
 # dimy-tech-test
-How to run this project
+How to run this project<br/>
 
-Open project `cd dimy-tech-test`\n
-Change .env files with yours configuration
-Run program `go run main.go`
+Open project `cd dimy-tech-test` <br/><br/>
+Change .env files with yours configuration <br/><br/>
+Run program `go run main.go` <br/><br/><br/>
 
-BASE URL `host.com:3001/api/v1`
+BASE URL `host.com:3001/api/v1`<br/><br/>
 
-Customer
-GET `/customers`
-GET `/customers/:id`
-POST `/customers`
-PATCH `/customers/:id`
-DELETE `/customers/:id`
+Customer<br/>
+GET `/customers`<br/>
+GET `/customers/:id`<br/>
+POST `/customers`<br/>
+PATCH `/customers/:id`<br/>
+DELETE `/customers/:id`<br/><br/>
 
-Address
-GET `/addresses?customer_id=id`
-GET `/addresses/:id`
-POST `/addresses?customer_id=id`
-PATCH `/addresses/:id`
-DELETE `/addresses/:id`
+Address<br/>
+GET `/addresses?customer_id=id`<br/>
+GET `/addresses/:id`<br/>
+POST `/addresses?customer_id=id`<br/>
+PATCH `/addresses/:id`<br/>
+DELETE `/addresses/:id`<br/><br/>
 
-Product
-GET `/products`
-GET `/products/:id`
-POST `/products`
-PATCH `/products/:id`
-DELETE `/products/:id`
+Product<br/>
+GET `/products`<br/>
+GET `/products/:id`<br/>
+POST `/products`<br/>
+PATCH `/products/:id`<br/>
+DELETE `/products/:id`<br/><br/>
 
-Payment Method
-GET `/payment_methods`
-GET `/payment_methods/:id`
-POST `/payment_methods`
-PATCH `/payment_methods/:id`
-DELETE `/payment_methods/:id`
+Payment Method<br/>
+GET `/payment_methods`<br/>
+GET `/payment_methods/:id`<br/>
+POST `/payment_methods`<br/>
+PATCH `/payment_methods/:id`<br/>
+DELETE `/payment_methods/:id`<br/><br/>
 
-Order
-GET `/orders`
-GET `/orders/:id`
-POST `/orders?customer_id=id`
-PATCH `/orders/:id`
-DELETE `/orders/:id`
+Order<br/>
+GET `/orders`<br/>
+GET `/orders/:id`<br/>
+POST `/orders?customer_id=id`<br/>
+PATCH `/orders/:id`<br/>
+DELETE `/orders/:id`<br/><br/>
