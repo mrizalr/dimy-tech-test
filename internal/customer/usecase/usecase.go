@@ -29,11 +29,12 @@ func (u *usecase) CreateCustomer(customer models.Customer) (models.Customer, err
 
 func (u *usecase) UpdateCustomer(customerID int, customer models.Customer) (models.Customer, error) {
 	// Check if customer exist
-	_, err := u.repository.FindByID(customerID)
+	foundCustomer, err := u.repository.FindByID(customerID)
 	if err != nil {
 		return models.Customer{}, err
 	}
 
+	customer.ID = foundCustomer.ID
 	return u.repository.UpdateByID(customerID, customer)
 }
 
