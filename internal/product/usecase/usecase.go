@@ -19,7 +19,7 @@ func (u *usecase) GetProducts() ([]models.Product, error) {
 	return u.repository.Find()
 }
 
-func (u *usecase) GetProduct(productID int) (models.Product, error) {
+func (u *usecase) GetProductByID(productID int) (models.Product, error) {
 	return u.repository.FindByID(productID)
 }
 

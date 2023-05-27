@@ -12,7 +12,7 @@ type Repository interface {
 
 type Usecase interface {
 	GetProducts() ([]models.Product, error)
-	GetProduct(productID int) (models.Product, error)
+	GetProductByID(productID int) (models.Product, error)
 	CreateProduct(product models.Product) (models.Product, error)
 	UpdateProduct(productID int, product models.Product) (models.Product, error)
 	DeleteProduct(productID int) error
