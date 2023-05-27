@@ -12,7 +12,7 @@ type Repository interface {
 
 type Usecase interface {
 	GetPaymentMethods() ([]models.PaymentMethod, error)
-	GetPaymentMethod(paymentID int) (models.PaymentMethod, error)
+	GetPaymentMethodByID(paymentID int) (models.PaymentMethod, error)
 	CreatePaymentMethod(payment models.PaymentMethod) (models.PaymentMethod, error)
 	UpdatePaymentMethod(paymentID int, payment models.PaymentMethod) (models.PaymentMethod, error)
 	DeletePaymentMethod(paymentID int) error

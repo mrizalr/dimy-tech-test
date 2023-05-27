@@ -19,7 +19,7 @@ func (u *usecase) GetPaymentMethods() ([]models.PaymentMethod, error) {
 	return u.repository.Find()
 }
 
-func (u *usecase) GetPaymentMethod(paymentID int) (models.PaymentMethod, error) {
+func (u *usecase) GetPaymentMethodByID(paymentID int) (models.PaymentMethod, error) {
 	return u.repository.FindByID(paymentID)
 }
 
@@ -28,9 +28,21 @@ func (u *usecase) CreatePaymentMethod(payment models.PaymentMethod) (models.Paym
 }
 
 func (u *usecase) UpdatePaymentMethod(paymentID int, payment models.PaymentMethod) (models.PaymentMethod, error) {
+	// Check if payment method is exist
+	foundPayment, err := u.repository.FindByID(paymentID)
+	if err != nil {
+		return models.PaymentMethod{}, err
+	}
+
+	payment.ID = foundPayment.ID
 	return u.repository.UpdateByID(paymentID, payment)
 }
 
 func (u *usecase) DeletePaymentMethod(paymentID int) error {
+	// Check if payment method is exist
+	_, err := u.repository.FindByID(paymentID)
+	if err != nil {
+		return err
+	}
 	return u.repository.DeleteByID(paymentID)
 }
