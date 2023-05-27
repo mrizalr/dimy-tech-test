@@ -28,6 +28,7 @@ func (u *usecase) CreateAddress(address models.CustomerAddress) (models.Customer
 }
 
 func (u *usecase) UpdateAddress(addressID int, address models.CustomerAddress) (models.CustomerAddress, error) {
+	// Check if address exist
 	foundAddress, err := u.repository.FindByID(addressID)
 	if err != nil {
 		return models.CustomerAddress{}, err
@@ -39,5 +40,11 @@ func (u *usecase) UpdateAddress(addressID int, address models.CustomerAddress) (
 }
 
 func (u *usecase) DeleteAddress(addressID int) error {
+	// Check if address exist
+	_, err := u.repository.FindByID(addressID)
+	if err != nil {
+		return err
+	}
+
 	return u.repository.DeleteByID(addressID)
 }
